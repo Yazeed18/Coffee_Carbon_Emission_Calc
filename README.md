@@ -79,7 +79,7 @@ Lastly, the submit button has a special purpose in the `webpage.php` file where 
 
 The main styling and design was done using CSS and all the classes throughout the `html` and `php` files are found in the `App.css` file. The current design is not set and finalised but is free to be altered, changed or remade to better suit the true purpose of the website. This was done to have a foundation and easily identifiable div elements when making the website. 
 
-## Recommendations and moving forward
+# Recommendations and moving forward
 
 - The current website is not one which achieved our original project statement. Ideally, we would have proper and correct information for the coffee stores here on UW campus but these values are all subject to change if this project was to be done for the UW campus coffee stores. The different variables listed in the `php` such as the CO₂ emission values for the different cup sizes, coffee processes, milk and sugar will all need to be changed to accommodate for accurate values which will be dependent on the brand the UW campus coffee stores use. This is the main recommendation for moving forward with this calculator. 
 - In terms of details the user inputs, upon further development of this calculator, it would be nice if the user can have options of the different stores on campus, their preferred brew (dark, light, medium etc...) if applicable, lids for cups as well as options for set coffee types (cappuccino, americano, latte etc...). The idea is to have a basic calculator similar to what is currently set up and an advanced option which would allow the user to have more selections and inputs. 
