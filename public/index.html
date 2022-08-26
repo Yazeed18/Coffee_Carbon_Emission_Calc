@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="./App.css" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <title>Coffee Carbon Emission Calculator</title>
+  </head>
+  <body>
+    <h1>Carbon Emission Calculator</h1>
+    <div>
+      <form name="calc_carbon" method="post" action="webpage.php">
+        <div class="options">
+          <div class="question">
+          <label class="labels">Reusable Cup?</label>
+          </div>
+          <div class="response">
+          <select class="dropdown" className="reusable" name="reusable" id="reusable">
+            <option value="YesReusable">Yes!</option>
+            <option value="NoReusable">No</option>
+          </select></div><br><br>
+        </div>
+        <div class="options">
+          <div class="question">
+          <label class="labels">Choose Coffee Cup Size:</label>
+          </div>
+          <div class="response">
+          <select class="dropdown" className="size" name="size" id="size">
+            <option value="Small">8oz/237ml</option>
+            <option value="Medium">10oz/296ml</option>
+            <option value="Large">12oz/354ml</option>
+            <option value="X-Large">16oz/473ml</option>
+            <option value="XX-Large">20oz/591ml</option>
+          </select></div><br><br>
+        </div>
+     <!-- <div>
+      <label class="labels" >3rd label:</label>
+      <select class="dropdown" className="size">
+        <option value="Small">option 1</option>
+        <option value="Medium">option 2</option>
+        <option value="Large">option 3</option>
+      </select><br><br>
+      </div>
+      <div>
+      <label class="labels" >4th label:</label>
+      <select class="dropdown" className="size">
+        <option value="Small">option 1</option>
+        <option value="Medium">option 2</option>
+        <option value="Large">option 3</option>
+      </select><br><br>
+    </div> -->
+    <div class="options2">
+      <div>
+      <label class="labels2">Enter Number of packets of Sugar(2g)</label>
+      </div>
+      <div class="input">
+      <input name="sugar" value="0" type="text" maxlength="4" pattern="^\d{0,4}(?:\.\d{0,4})?$" oninvalid="this.setCustomValidity('Please Enter Positive Numbers Only')"
+      onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity('')" inputmode="numeric" class="textbox" placeholder="Number of packets of Sugar"></div><br><br>
+    </div>
+    <div class="options2">
+      <div>
+      <label class="labels2">Enter Number of shots of Milk</label>
+      </div>
+      <div class="input">
+      <input name="milk" value="0" type="text" maxlength="4" pattern="[0-9.]*" oninvalid="this.setCustomValidity('Please Enter Positive Numbers Only')"
+      onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity('')" inputmode="numeric" class="textbox" placeholder="Number of shots of Milk"></div><br><br>
+    </div>
+    <div class="buttons">
+      <button type="submit" name="submit" class="button" id="press">Submit</button>
+    </div>
+    </form>
+    <div class="table_element" style="display: none;">
+    <table border="1">
+      <caption>Results of your cup of Coffee</caption>
+      <tbody>
+        <tr class="headings_table">
+        <th>Product</th>
+        <th>Process</th>
+        <th>Results/g CO₂eq per unit</th></tr>
+        <tr>
+          <th rowspan="10" style="color:aqua; font-size:18pt; background-color: blue;">Coffee</th>
+          <th>Planting</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Brewing</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Washing</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Distribution</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Processing</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Packaging</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Delivery</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Treatment</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Cultivation</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>End of Life Wastes</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th rowspan="3" style="color:aqua; font-size:18pt; background-color: blue;">Others</th>
+          <th>Cup and Coffee Equipment Manufacture</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Sugar</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Milk</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th colspan="2" style="color:lightgreen; background-color:dodgerblue; font-size:19pt;">Total CO₂ emission is:</th>
+          <th></th>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+  </body>
+</html>
+  
+  
