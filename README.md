@@ -10,18 +10,20 @@
 
 ## Website info
 - The website takes in basic user inputs about their coffee order and displays detailed information of the Carbon footprint of their coffee order in the form of a table. 
-    
+
+###### Simple intended use of the website 
+
 ![Intro_basic use](https://user-images.githubusercontent.com/45414646/190929845-d36aafdc-1a19-4da8-b261-d05f0582ab7f.gif)
 
 ## User Input
 
 - The input boxes have restrictions on them where the user can only enter a maximum of 4 characters. These characters can only be numbers (0-9) as well one decimal point such that it is a proper floating point number. This was done using a regex pattern. 
 
--# Error check showcasing that only 4 characters allowed such that they must be positive numbers only.
+###### Error check showcasing that only 4 characters allowed such that they must be positive numbers only.
 
 ![error check_1](https://user-images.githubusercontent.com/45414646/190930580-022e4b71-6097-4764-aaee-f6e73df57ef1.gif)
 
--# Proper decimal placement being shown versus error check of improper decimal point use.
+###### Proper decimal placement being shown versus error check of improper decimal point use.
 
 ![decimal_use](https://user-images.githubusercontent.com/45414646/190930285-c6db7200-d649-4ee1-98c4-8a74200a185f.gif)
 
@@ -31,6 +33,9 @@
 
 - The inputs are also remembered upon submission meaning if the user wants to make a slight change to their order they can do so easily without having to re-enter their entire order. 
 
--# User is able to change their order by switching to a reusable cup and noticing the difference in their Carbon emission. 
+###### User is able to change their order by switching to a reusable cup and noticing the difference in their Carbon emission. 
+
+![stored_inputs](https://user-images.githubusercontent.com/45414646/190932721-6fb4472b-5d35-437a-bff2-9ea7780f83a4.gif)
+
 
 
