@@ -1,28 +1,31 @@
+#Variable values have been changed to avoid copyright issues with the university as well as research authors
+
 <?php
 $reusable = isset($_POST['reusable']) ? $_POST['reusable'] : "<script type='text/javascript'>alert('Please select Yes or No');</script>";
 $size_val = isset($_POST['size']) ? $_POST['size'] : "<script type='text/javascript'>alert('Please select a size');</script>";
 $sugar_val = isset($_POST['sugar']) ? $_POST['sugar'] : "<script type='text/javascript'>alert('Please enter number of shots of milk');</script>";
 $milk_val = isset($_POST['milk']) ? $_POST['milk'] : "<script type='text/javascript'>alert('Please enter number of shots of milk');</script>";
 
-//Carbon Emission values in g CO₂ for each size of cup based on 8oz paper cup carbon emission value of 8.1 g CO₂
-$s = 8.1;
-$m = 10.125;
-$l = 12.15;
-$xl = 16.2;
-$xxl = 20.25;
+//Carbon Emission values in g CO₂ for each size of cup based on 8oz paper cup carbon emission value of (redacted) g CO₂
+$s = 1;
+$m = 2;
+$l = 3;
+$xl = 4;
+$xxl = 5;
 
 //Carbon Emission values in g CO₂ per 100ml of Coffee
-$planting = 6.08;
-$brewing = 44.03;
-$washing = 20.87;
-$distribution = 2.79;
-$processing = 2.63;
-$packaging = 2.79;
-$delivery = 2.63;
-$treatment = 8.38;
-$cultivation = 24.32;
-$eol_wastes = -3.78;
+$planting = 2;
+$brewing = 4;
+$washing = 6;
+$distribution = 8;
+$processing = 10;
+$packaging = 12;
+$delivery = 14;
+$treatment = 16;
+$cultivation = 18;
+$eol_wastes = -5;
 
+//Check to see if submit button was pressed and if it's not a reusable cup
 if (isset($_POST['submit'])){
   if($reusable == "NoReusable"){
     if($size_val == "Small"){
@@ -46,6 +49,7 @@ if (isset($_POST['submit'])){
       $cup_factor = 5.91;
     }
   }
+  //Reusable cup is used here
   else{
     $cup_value = 0;
     if($size_val == "Small"){
@@ -65,20 +69,25 @@ if (isset($_POST['submit'])){
     }
   }
 }
-$coffeetotal = $cup_factor *($planting + $brewing + $washing + $distribution + $processing + $packaging + $delivery + $treatment
-               + $cultivation + $eol_wastes);
-//$sugartotal = $sugar_val * 0.000392;
+
+//total CO₂ emission for 100ml of Coffee multiplied by the cup_factor which gives the resulting CO₂ emission for that size of black coffee without any addition of milk and sugar
+$coffeetotal = ($planting + $brewing + $washing + $distribution + $processing + $packaging + $delivery + $treatment
+               + $cultivation + $eol_wastes) * $cup_factor;
+
+//$sugartotal = $sugar_val * 5;
+//5 is the CO₂ emission for 2g of sugar
 if($sugar_val == NULL){
   $sugartotal = 0;
 }else{
-  $sugartotal = $sugar_val * 0.392;
+  $sugartotal = $sugar_val * 5;
 }
-//$milktotal = $milk_val * 0.02224739932;
+//$milktotal = $milk_val * 12;
+//12 is the CO₂ emission for 9ml of milk
 if($milk_val == NULL){
   $milktotal = 0;
 }
 else{
-  $milktotal = $milk_val * 22.24739932;
+  $milktotal = $milk_val * 12;
 }
 
 //Total Carbon Emission for one cup of Coffee
@@ -119,22 +128,6 @@ $message = (int)($cup_value + $milktotal + $sugartotal + $coffeetotal);
             <option value="XX-Large" <?php if (isset($_POST['size']) && ($_POST['size']=='XX-Large')){echo 'selected="selected"';}?>>20oz/591ml</option>
           </select></div><br><br>
         </div>
-      <!-- <div>
-      <label class="labels" >3rd label:</label>
-      <select class="dropdown" className="size">
-        <option value="Small">option 1</option>
-        <option value="Medium">option 2</option>
-        <option value="Large">option 3</option>
-      </select><br><br>
-      </div>
-      <div>
-      <label class="labels" >4th label:</label>
-      <select class="dropdown" className="size">
-        <option value="Small">option 1</option>
-        <option value="Medium">option 2</option>
-        <option value="Large">option 3</option>
-      </select><br><br>
-      </div> -->
     <div class="options2">
       <div>
       <label class="labels2">Enter Number of packets of Sugar(2g)</label>
@@ -148,7 +141,7 @@ $message = (int)($cup_value + $milktotal + $sugartotal + $coffeetotal);
       <label class="labels2">Enter Number of shots of Milk</label>
       </div>
       <div class="input">
-      <input name="milk" type="text" maxlength="4" pattern="[0-9.]*" oninvalid="this.setCustomValidity('Please Enter Positive Numbers Only')"
+      <input name="milk" type="text" maxlength="4" pattern="^\d{0,4}(?:\.\d{0,4})?$" oninvalid="this.setCustomValidity('Please Enter Positive Numbers Only')"
       onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity('')" inputmode="numeric" class="textbox" placeholder="Number of shots of Milk" value="<?php if (isset($_POST['milk'])){echo htmlentities ($_POST['milk']);} else{0;}?>"></div><br><br>
     </div>
     <div class="buttons">
@@ -221,13 +214,9 @@ $message = (int)($cup_value + $milktotal + $sugartotal + $coffeetotal);
         </tr>
 
       </tr></tbody>
-
     </table>
     </div>
     </div>
-    <!--<div>
-      <h5 class="web_header5">Your total carbon emission is: </h5>
-    </div>-->
     </div>
   </body>
 </html>
