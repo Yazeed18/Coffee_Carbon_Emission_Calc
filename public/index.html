@@ -1,3 +1,4 @@
+#Variable values have been changed to avoid copyright issues with the university as well as research authors
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,22 +33,6 @@
             <option value="XX-Large">20oz/591ml</option>
           </select></div><br><br>
         </div>
-     <!-- <div>
-      <label class="labels" >3rd label:</label>
-      <select class="dropdown" className="size">
-        <option value="Small">option 1</option>
-        <option value="Medium">option 2</option>
-        <option value="Large">option 3</option>
-      </select><br><br>
-      </div>
-      <div>
-      <label class="labels" >4th label:</label>
-      <select class="dropdown" className="size">
-        <option value="Small">option 1</option>
-        <option value="Medium">option 2</option>
-        <option value="Large">option 3</option>
-      </select><br><br>
-    </div> -->
     <div class="options2">
       <div>
       <label class="labels2">Enter Number of packets of Sugar(2g)</label>
@@ -61,7 +46,7 @@
       <label class="labels2">Enter Number of shots of Milk</label>
       </div>
       <div class="input">
-      <input name="milk" value="0" type="text" maxlength="4" pattern="[0-9.]*" oninvalid="this.setCustomValidity('Please Enter Positive Numbers Only')"
+      <input name="milk" value="0" type="text" maxlength="4" pattern="^\d{0,4}(?:\.\d{0,4})?$" oninvalid="this.setCustomValidity('Please Enter Positive Numbers Only')"
       onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity('')" inputmode="numeric" class="textbox" placeholder="Number of shots of Milk"></div><br><br>
     </div>
     <div class="buttons">
