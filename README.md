@@ -4,7 +4,7 @@
 
 - The website takes in basic user inputs about their coffee order and displays detailed information of the Carbon footprint of their coffee in the form of a table. 
 
-![intro_basic use](https://user-images.githubusercontent.com/45414646/190928994-36e40525-3035-4d19-82f2-d434e7300a28.gif)
+![](https://user-images.githubusercontent.com/45414646/190928994-36e40525-3035-4d19-82f2-d434e7300a28.gif)
 
 
 
